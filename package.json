@@ -1,0 +1,33 @@
+{
+  "name": "chat_app",
+  "version": "1.0.0",
+  "description": "Chat Application",
+  "main": "app.js",
+  "repository": "https://github.com/nazmul53p/chat_app.git",
+  "author": "nazmul53p <nazmul2018s@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "set NODE_ENV=development&&nodemon app.js",
+    "pro": "set NODE_ENV=production&&node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.5",
+    "multer": "^1.4.3"
+  },
+  "devDependencies": {
+    "eslint": "7.2.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.4.0",
+    "prettier": "^2.4.0"
+  }
+}
