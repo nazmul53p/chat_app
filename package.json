@@ -7,7 +7,7 @@
   "author": "nazmul53p <nazmul2018s@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "set NODE_ENV=development&&nodemon app.js",
+    "start": "nodemon app.js",
     "pro": "set NODE_ENV=production&&node app.js"
   },
   "dependencies": {

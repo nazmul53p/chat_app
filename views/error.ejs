@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <% if(mode){ %>
+    <div style="margin: 50px"></div>
+      <h3>Error Message: <%= err.message %></h3>
+      <h7> Error State: <%= status %> </h7>
+      <ul>
+        <% for(let err = 0; err < list.length; err++ ){ %>
+        <li><%= list[err] %></li>
+        <% } %>
+      </ul>
+    </div>
+    <%} else{ %>
+        <h3>Error Message: <%= err.message %></h3>
+    <% } %>
+  </body>
+</html>
