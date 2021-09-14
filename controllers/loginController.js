@@ -8,7 +8,5 @@
 // Dependencies
 
 module.exports = function loginController(req, res, next) {
-    res.render('index', {
-        title: 'Chat Application',
-    });
+    res.render('index');
 };

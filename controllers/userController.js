@@ -8,7 +8,5 @@
 // Dependencies
 
 module.exports = function userController(req, res, next) {
-    res.render('users', {
-        title: 'Chat Application',
-    });
+    res.render('users');
 };

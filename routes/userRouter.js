@@ -8,10 +8,11 @@
 // Dependencies
 const express = require('express');
 const userController = require('../controllers/userController');
+const decodedHtmlResponse = require('../middlewares/common/decodedHtmlResponse');
 
 const router = express.Router();
 
 // login page
-router.get('/', userController);
+router.get('/', decodedHtmlResponse('User'), userController);
 
 module.exports = router;

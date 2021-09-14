@@ -8,7 +8,5 @@
 // Dependencies
 
 module.exports = function inboxController(req, res, next) {
-    res.render('inbox', {
-        title: 'Chat Application',
-    });
+    res.render('inbox');
 };

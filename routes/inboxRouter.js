@@ -8,10 +8,11 @@
 // Dependencies
 const express = require('express');
 const inboxController = require('../controllers/inboxController');
+const decodedHtmlResponse = require('../middlewares/common/decodedHtmlResponse');
 
 const router = express.Router();
 
-// login page
-router.get('/', inboxController);
+// inbox page
+router.get('/', decodedHtmlResponse('Inbox Page'), inboxController);
 
 module.exports = router;
