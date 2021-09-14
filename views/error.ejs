@@ -7,18 +7,18 @@
     <title><%= title %></title>
   </head>
   <body>
-    <% if(mode){ %>
+    <% if(errors.env){ %>
     <div style="margin: 50px"></div>
-      <h3>Error Message: <%= err.message %></h3>
-      <h7> Error State: <%= status %> </h7>
+      <h3>Error Message: <%= errors.message %></h3>
+      <h7> Error State: <%= errors.status %> </h7>
       <ul>
-        <% for(let err = 0; err < list.length; err++ ){ %>
-        <li><%= list[err] %></li>
+        <% for(let err = 0; err < errors.list.length; err++ ){ %>
+        <li><%= errors.list[err] %></li>
         <% } %>
       </ul>
     </div>
     <%} else{ %>
-        <h3>Error Message: <%= err.message %></h3>
+        <h3 style="margin-left: 100px;"><%= errors.message %></h3>
     <% } %>
   </body>
 </html>

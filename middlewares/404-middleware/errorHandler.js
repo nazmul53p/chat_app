@@ -9,23 +9,32 @@
 const createError = require('http-errors');
 
 // module scaffolding
-const errors = {};
+const error = {};
 
 // route error
-errors.routeNotFound = (req, res, next) => {
+error.routeNotFound = (req, res, next) => {
     next(createError(404, 'Your request content not found!'));
 };
 
 // default error
-errors.defaultErrorHandler = (err, req, res, next) => {
-    if (!res.locals.html) {
-        const error = {};
-        error.err = err;
-        error.mode = process.env.NODE_ENV === 'development';
-        error.list = process.env.NODE_ENV === 'development' ? err.stack.split(/ at /) : err.message;
-        error.status = err.status || 500;
-        res.status(error.status);
-        res.locals = error;
+error.defaultErrorHandler = (err, req, res, next) => {
+    if (res.locals.html) {
+        const status = err.status || 500;
+        if (process.env.NODE_ENV === 'development') {
+            res.locals.errors = {
+                message: err.message,
+                list: err.stack.split(/ at /),
+                env: true,
+                status,
+            };
+        } else {
+            res.locals.errors = {
+                env: false,
+                message: err.message,
+            };
+        }
+        res.status(status);
+
         // html response
         res.render('error', { title: 'Error Page' });
     } else {
@@ -35,4 +44,4 @@ errors.defaultErrorHandler = (err, req, res, next) => {
 };
 
 // module export
-module.exports = errors;
+module.exports = error;
